@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Products>
+	<ReleasePolicy type="ConstantTime" active="True">
+		<IntervalTime>62.5</IntervalTime>
+	</ReleasePolicy>
+	<ReleasePolicy type="ConstantWIP" active="False">
+		<IntervalTime>120</IntervalTime>
+		<ConstantWIP>13</ConstantWIP>
+	</ReleasePolicy>
+	<ReleasePolicy type="ConstantTimeDetail" active="False" />
+	<ReleasePolicy type="ConstantWIPDetail" active="False" />
+	<ReleasePolicy type="PlanLotAndDueDate" active="False" />
+
+
+	<Product type="Pa">
+		<PlanLotNum>600</PlanLotNum>
+		<PlanProduceTime>40</PlanProduceTime>
+		<ReleaseProb>1</ReleaseProb>
+		<ReleaseIntervalTime distribution="normal">
+			<Parameter name="mean">40</Parameter>
+			<Parameter name="variance">10</Parameter>
+		</ReleaseIntervalTime>
+		<ReleaseConstantWIP>10</ReleaseConstantWIP>
+		<Process>Pa</Process>
+	</Product>
+<!--	<Product type="Pb">-->
+<!--		<PlanLotNum>800</PlanLotNum>-->
+<!--		<PlanProduceTime>48</PlanProduceTime>-->
+<!--		<ReleaseProb>0.5</ReleaseProb>-->
+<!--		<ReleaseIntervalTime distribution="normal">-->
+<!--			<Parameter name="mean">50</Parameter>-->
+<!--			<Parameter name="variance">12</Parameter>-->
+<!--		</ReleaseIntervalTime>-->
+<!--		<ReleaseConstantWIP>7</ReleaseConstantWIP>-->
+<!--		<Process>Pb</Process>-->
+<!--	</Product>-->
+<!--	-->
+</Products>

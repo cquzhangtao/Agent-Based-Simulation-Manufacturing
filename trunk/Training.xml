@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Training>
+	<BPNetwork>
+		<HiddenNodeNum>50</HiddenNodeNum>
+		<LearningRate>0.5</LearningRate>
+		<Epoch>1000</Epoch>
+		<Momentum>0.5</Momentum>
+		<Tolerance>5</Tolerance>
+		<Gradient>0.000001</Gradient>
+		<MaxFailNum>20</MaxFailNum>
+	</BPNetwork>
+	<Cluster>
+		<ClassNum>5</ClassNum>
+		<Epoch>100</Epoch>
+		<Tolerance>0.000001</Tolerance>
+		<MaxIterate>50</MaxIterate>
+	</Cluster>
+</Training>

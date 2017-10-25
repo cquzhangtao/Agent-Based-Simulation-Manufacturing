@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Processes>
+	<Process name="Pa">
+		<Steps>
+			<Step name="s1">
+				<ToolGroupName>MA</ToolGroupName>
+				<ProcessTime>42</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+		</Steps>
+	</Process>
+<!--	<Process name="Pb">-->
+<!--		<Steps>-->
+<!---->
+<!--			<Step name="s1">-->
+<!--				<ToolGroupName>MA</ToolGroupName>-->
+<!--				<ProcessTime>32</ProcessTime>-->
+<!--				<TransportTime>0</TransportTime>-->
+<!--			</Step>-->
+<!--			-->
+<!--		</Steps>-->
+<!--	</Process>-->
+	
+</Processes>

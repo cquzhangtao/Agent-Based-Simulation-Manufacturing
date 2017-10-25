@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xs:include schemaLocation="Common.xsd"></xs:include>
+	<xs:element name="Transportations">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Transportation" type="transportation"
+					maxOccurs="unbounded"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="transportation">
+		<xs:all>
+			<xs:element name="OptionalResources" type="transporter"></xs:element>
+			<xs:element name="TransTimes" type="transTimes"></xs:element>
+		</xs:all>
+		<xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="transTimes">
+		<xs:sequence>
+			<xs:element name="TransTime" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="distributedValue">
+							<xs:attribute name="byTransporter" type="letterOrNumberString"
+								use="required"></xs:attribute>
+							<xs:attribute name="byWorkerGroup" type="letterOrNumberString"
+								use="required"></xs:attribute>
+						</xs:extension>
+					</xs:complexContent>
+
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="transporter">
+		<xs:sequence>
+			<xs:element name="OptionalTransporter">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Transporter" type="letterOrNumberString"
+							maxOccurs="unbounded"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="OptionalWorkerGroup">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="WorkerGroup" type="letterOrNumberString"
+							maxOccurs="unbounded"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

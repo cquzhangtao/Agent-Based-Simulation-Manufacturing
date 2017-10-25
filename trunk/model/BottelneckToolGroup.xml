@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ToolGroups>
+	<!-- <Dispatcher path="./model/Jobshop_20130314023158100dayslight.dispatcher"/> -->
+	<ToolGroup name="M1">
+		<ToolNumber>1</ToolNumber>
+		<Rule>FIFO</Rule>
+		<BufferSize>5000</BufferSize>
+		<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">720</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">240</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">600</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="M2">
+		<ToolNumber>1</ToolNumber>
+		<Rule>FIFO</Rule>
+		<BufferSize>5000</BufferSize>
+<!--		<Bottelneck isBottelneck="True" aimBufferSize="5" level="1"></Bottelneck>-->
+		<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">1000</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">1000</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="M3">
+		<ToolNumber>1</ToolNumber>
+		<Rule>FIFO</Rule>
+		<BufferSize>5000</BufferSize>
+
+		<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">980</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">360</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="M4">
+		<ToolNumber>1</ToolNumber>
+		<Rule>FIFO</Rule>
+		<BufferSize>5000</BufferSize>
+		<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">480</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">240</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">360</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="M5">
+		<ToolNumber>1</ToolNumber>
+		<Rule>FIFO</Rule>
+		<BufferSize>5000</BufferSize>
+
+		<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">720</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">240</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">600</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="M6">
+		<ToolNumber>1</ToolNumber>
+		<Rule>FIFO</Rule>
+		<BufferSize>5000</BufferSize>
+<!--		<Bottelneck isBottelneck="True" aimBufferSize="8" level="2"></Bottelneck>-->
+		<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">720</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">240</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">600</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="M7">
+		<ToolNumber>1</ToolNumber>
+		<Rule>FIFO</Rule>
+		<BufferSize>5000</BufferSize>
+		<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">720</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">240</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">600</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="M8">
+		<ToolNumber>1</ToolNumber>
+		<Rule>FIFO</Rule>
+		<BufferSize>5000</BufferSize>
+		<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">1200</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">800</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">600</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="M9">
+		<ToolNumber>1</ToolNumber>
+		<Rule>FIFO</Rule>
+		<BufferSize>5000</BufferSize>
+		<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">720</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">240</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">600</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="M10">
+		<ToolNumber>1</ToolNumber>
+		<Rule>FIFO</Rule>
+		<BufferSize>5000</BufferSize>
+<!--		<Bottelneck isBottelneck="True" aimBufferSize="8" level="1"></Bottelneck>-->
+		<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">1200</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">540</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">600</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="M11">
+		<ToolNumber>1</ToolNumber>
+		<Rule>FIFO</Rule>
+		<BufferSize>5000</BufferSize>
+		<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">720</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">240</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">600</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="M12">
+		<ToolNumber>1</ToolNumber>
+		<Rule>FIFO</Rule>
+		<BufferSize>5000</BufferSize>
+		<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">720</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">240</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">600</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+
+
+</ToolGroups>

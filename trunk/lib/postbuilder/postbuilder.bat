@@ -1,0 +1,1 @@
+java -cp .;asm-all-5.0.3.jar;gotolib.jar Convert %*

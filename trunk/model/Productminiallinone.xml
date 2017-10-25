@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Products>
+	<ReleasePolicy type="ConstantTime" active="False">
+		<IntervalTime>120</IntervalTime>
+	</ReleasePolicy>
+	<ReleasePolicy type="ConstantWIP" active="False">
+		<IntervalTime>120</IntervalTime>
+		<ConstantWIP>13</ConstantWIP>
+	</ReleasePolicy>
+	<ReleasePolicy type="ConstantTimeDetail" active="True"/>
+	<ReleasePolicy type="ConstantWIPDetail" active="False"/>
+	<ReleasePolicy type="PlanLotAndDueDate" active="False"/>
+	
+
+	<Product type="Pa">
+		<PlanLotNum>600</PlanLotNum>
+		<PlanProduceTime>100</PlanProduceTime>
+		<ReleaseProb>0.6</ReleaseProb>
+		<ReleaseIntervalTime>200</ReleaseIntervalTime>
+		<ReleaseConstantWIP>7</ReleaseConstantWIP>
+		<Process>Pa</Process>
+	</Product>
+	<Product type="Pb">
+		<PlanLotNum>800</PlanLotNum>
+		<PlanProduceTime>100</PlanProduceTime>
+		<ReleaseProb>0.36</ReleaseProb>
+		<ReleaseIntervalTime>333.3333</ReleaseIntervalTime>
+		<ReleaseConstantWIP>5</ReleaseConstantWIP>
+		<Process>Pb</Process>
+	</Product>
+	<Product type="TW">
+		<PlanLotNum>500</PlanLotNum>
+		<PlanProduceTime>100</PlanProduceTime>
+		<ReleaseProb>0.04</ReleaseProb>
+		<ReleaseIntervalTime>3000</ReleaseIntervalTime>
+		<ReleaseConstantWIP>1</ReleaseConstantWIP>
+		<Process>TW</Process>
+	</Product>
+</Products>

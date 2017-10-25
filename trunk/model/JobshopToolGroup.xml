@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ToolGroups>
+<!--	<Dispatcher path="./model/Jobshop_20130314023158100dayslight.dispatcher"/>-->
+	<ToolGroup name="MA">
+		<ToolNumber>5</ToolNumber>
+		<Rule>SPT</Rule>
+		<BufferSize>5000</BufferSize>
+		<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">720</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">240</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">600</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="MB">
+		<ToolNumber>6</ToolNumber>
+		<Rule>SPT</Rule>
+		<BufferSize>5000</BufferSize>
+			<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">720</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">240</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">600</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="MC">
+		<ToolNumber>3</ToolNumber>
+		<Rule>SPT</Rule>
+		<BufferSize>5000</BufferSize>
+
+		<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">480</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">360</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="MD">
+		<ToolNumber>2</ToolNumber>
+		<Rule>SPT</Rule>
+		<BufferSize>5000</BufferSize>
+		<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">480</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">240</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">360</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="ME">
+		<ToolNumber>3</ToolNumber>
+		<Rule>SPT</Rule>
+		<BufferSize>5000</BufferSize>
+
+			<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">720</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">240</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">600</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="MF">
+		<ToolNumber>5</ToolNumber>
+		<Rule>SPT</Rule>
+		<BufferSize>5000</BufferSize>
+			<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">720</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">240</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">600</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">120</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+		</Interrupts>
+	</ToolGroup>
+
+
+</ToolGroups>

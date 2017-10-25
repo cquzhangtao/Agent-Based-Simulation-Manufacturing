@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xs:include schemaLocation="Common.xsd"></xs:include>
+	<xs:element name="Operations">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="Operation" type="operation" />
+			</xs:sequence>
+
+		</xs:complexType>
+
+	</xs:element>
+	<xs:complexType name="operation">
+		<xs:all>
+			<xs:element name="OptionalResource" type="resource"></xs:element>
+			<xs:element name="ProcTimes" type="procTimes"></xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="procTimes">
+		<xs:sequence>
+			<xs:element name="procTime" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="distributedValue">
+							<xs:attribute name="onToolGroup" type="letterOrNumberString"
+								use="required"></xs:attribute>
+							<xs:attribute name="byWorkerGroup" type="letterOrNumberString"  use="required"></xs:attribute>
+						</xs:extension>
+					</xs:complexContent>
+
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="resource">
+		<xs:sequence>
+			<xs:element name="OptionalToolGroup">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ToolGroup" type="letterOrNumberString"
+							maxOccurs="unbounded"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="OptionalWorkerGroup">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="WorkerGroup" type="letterOrNumberString"
+							maxOccurs="unbounded"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

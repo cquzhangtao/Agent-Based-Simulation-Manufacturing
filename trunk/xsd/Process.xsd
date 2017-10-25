@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xs:include schemaLocation="Common.xsd"></xs:include>
+	<xs:element name="Processes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="Process" type="process" />
+			</xs:sequence>
+		</xs:complexType>
+
+	</xs:element>
+	<xs:complexType name="process">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" name="Step" type="step" />
+		</xs:sequence>
+		<xs:attribute name="name" type="letterOrNumberString"
+			use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="step">
+		<xs:all>
+			<xs:element name="Operation" type="letterOrNumberString"></xs:element>
+			<xs:element name="Reworkings" type="reworkings" minOccurs="0"></xs:element>
+		</xs:all>
+		<xs:attribute name="name" type="letterOrNumberString"
+			use="required"></xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="reworkings">
+		<xs:sequence>
+			<xs:element name="Reworking" type="reworking" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="reworking">
+		<xs:all>
+			<xs:element name="TargetStep" type="xs:string"></xs:element>
+			<xs:element name="Occurrence" type="distributedValue"></xs:element>
+		</xs:all>
+	</xs:complexType>
+
+</xs:schema>

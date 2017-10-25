@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Processes>
+	<Process name="Pa">
+		<Steps>
+			<Step name="Pa1" skill="skill1" />
+			<Step name="Pa2" skill="skill2" />
+			<Step name="Pa3" skill="skill3" />
+		</Steps>
+	</Process>
+	
+		<Process name="Pb">
+		<Steps>
+			<Step name="Pb1" skill="skill3" />
+			<Step name="Pb2" skill="skill1" />
+			<Step name="Pb3" skill="skill2" />
+		</Steps>
+	</Process>
+</Processes>

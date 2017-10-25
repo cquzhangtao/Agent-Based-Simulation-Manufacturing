@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Products>
+	<ReleasePolicy type="ConstantTime" active="True">
+		<IntervalTime>59</IntervalTime>
+	</ReleasePolicy>
+	<ReleasePolicy type="ConstantWIP" active="False">
+		<IntervalTime>120</IntervalTime>
+		<ConstantWIP>13</ConstantWIP>
+	</ReleasePolicy>
+	<ReleasePolicy type="ConstantTimeDetail" active="False" />
+	<ReleasePolicy type="ConstantWIPDetail" active="False" />
+	<ReleasePolicy type="PlanLotAndDueDate" active="False" />
+
+
+	<Product type="Pa">
+		<PlanLotNum>600</PlanLotNum>
+		<PlanProduceTime>40</PlanProduceTime>
+		<ReleaseProb>0.333</ReleaseProb>
+		<ReleaseIntervalTime distribution="normal">
+			<Parameter name="mean">40</Parameter>
+			<Parameter name="variance">10</Parameter>
+		</ReleaseIntervalTime>
+		<ReleaseConstantWIP>10</ReleaseConstantWIP>
+		<Process>Pa</Process>
+	</Product>
+	<Product type="Pb">
+		<PlanLotNum>800</PlanLotNum>
+		<PlanProduceTime>48</PlanProduceTime>
+		<ReleaseProb>0.267</ReleaseProb>
+		<ReleaseIntervalTime distribution="normal">
+			<Parameter name="mean">50</Parameter>
+			<Parameter name="variance">12</Parameter>
+		</ReleaseIntervalTime>
+		<ReleaseConstantWIP>7</ReleaseConstantWIP>
+		<Process>Pb</Process>
+	</Product>
+	<Product type="Pc">
+		<PlanLotNum>500</PlanLotNum>
+		<PlanProduceTime>50</PlanProduceTime>
+		<ReleaseProb>0.267</ReleaseProb>
+		<ReleaseIntervalTime distribution="normal">
+			<Parameter name="mean">50</Parameter>
+			<Parameter name="variance">12</Parameter>
+		</ReleaseIntervalTime>
+		<ReleaseConstantWIP>4</ReleaseConstantWIP>
+		<Process>Pc</Process>
+	</Product>
+	<Product type="Pd">
+		<PlanLotNum>500</PlanLotNum>
+		<PlanProduceTime>100</PlanProduceTime>
+		<ReleaseProb>0.133</ReleaseProb>
+		<ReleaseIntervalTime distribution="normal">
+			<Parameter name="mean">100</Parameter>
+			<Parameter name="variance">25</Parameter>
+		</ReleaseIntervalTime>
+		<ReleaseConstantWIP>8</ReleaseConstantWIP>
+		<Process>Pd</Process>
+	</Product>
+</Products>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Simulator>
+	<SimEndCondition type="ByPlanTime" active="True">
+		<PlanTime>7</PlanTime>
+	</SimEndCondition>
+	<SimEndCondition type="ByPlanLot" active="False">
+		<PlanLotNum>4000</PlanLotNum>
+	</SimEndCondition>
+	<SimEndCondition type="ByDetailPlanLot" active="False"/>
+	<SimEndCondition type="ByDetailPlanTime" active="False"/>
+	<SimTimes>1</SimTimes>
+	<SampleTrainingData>False</SampleTrainingData>
+	
+	<Output>
+		<BufferData>False</BufferData>
+		<ToolData>False</ToolData>
+		<WaitTime>False</WaitTime>
+		<BlockTime>False</BlockTime>
+		<ReleaseData>False</ReleaseData>
+		<JobData>False</JobData>
+	</Output>
+	<GUI show="False" />
+	<DateAcqTime unit="day">1</DateAcqTime>
+</Simulator>

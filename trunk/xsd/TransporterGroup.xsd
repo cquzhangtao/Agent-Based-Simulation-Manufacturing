@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  elementFormDefault="qualified">
+	<xs:include schemaLocation="Common.xsd" />
+	<xs:element name="TransporterGroups">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TransporterGroup" type="transporter" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="transporter">
+		<xs:all>
+			<xs:element name="TransporterNumber" type="positiveNumber"
+				default="1" />
+			<xs:element name="Batches" type="batches" minOccurs="0" />
+			<xs:element name="Interrupts" type="interrupts" minOccurs="0"></xs:element>
+		</xs:all>
+		<xs:attribute name="name" type="letterOrNumberString"
+			use="required"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="interrupts">
+		<xs:sequence>
+			<xs:element name="Interrupt" type="interrupt" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="interrupt">
+		<xs:all>
+			<xs:element name="Occurrence" type="distributedValue"></xs:element>
+			<xs:element name="Recovery" type="distributedValue"></xs:element>
+		</xs:all>
+		<xs:attribute name="type" type="interruptType" use="required"></xs:attribute>
+		<xs:attribute name="applyTo" type="applyto" use="required"></xs:attribute>
+		<xs:attribute name="specifiedIndex" type="xs:int"></xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="interruptType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="breakdown"></xs:enumeration>
+			<xs:enumeration value="maintenance"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="applyto">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OneTransporter"></xs:enumeration>
+			<xs:enumeration value="EachTransporter"></xs:enumeration>
+			<xs:enumeration value="SpecifyTransporter"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="batches">
+		<xs:sequence>
+			<xs:element name="Batch" type="batchInfo" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="batchInfo">
+		<xs:sequence>
+			<xs:element name="Destination" type="dest" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:int" use="required"></xs:attribute>
+		<xs:attribute name="size" type="xs:int" use="required"></xs:attribute>
+		<xs:attribute name="minSize" type="xs:int"></xs:attribute>
+		<xs:attribute name="maxSize" type="xs:int"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="dest">
+		<xs:attribute name="toolGroup" type="xs:string" use="required"></xs:attribute>
+	</xs:complexType>
+
+</xs:schema>

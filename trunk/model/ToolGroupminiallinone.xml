@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ToolGroups>
+	<ToolGroup name="Diffusion">
+		<ToolNumber>2</ToolNumber>
+		<Rule>SPT</Rule>
+		<BufferType>AllInOne</BufferType>
+		<BufferSize>18</BufferSize>
+		<Batchs isBatch="True">
+			<Batch ID="1" number="3"></Batch>
+			<Batch ID="2" number="3"></Batch>
+			<Batch ID="3" number="3"></Batch>
+			<Batch ID="4" number="3"></Batch>
+		</Batchs>
+		<Interrupts>
+<!-- 			<Interrupt type="Breakdown" applyTo="EachTool"> -->
+<!-- 				<Occurrence> -->
+<!-- 					<Distribution name="Exponential"> -->
+<!-- 						<Para unit="Hour">2500</Para> -->
+<!-- 					</Distribution> -->
+<!-- 				</Occurrence> -->
+<!-- 				<Recovery> -->
+<!-- 					<Distribution name="Exponential"> -->
+<!-- 						<Para unit="Minute">480</Para> -->
+<!-- 					</Distribution> -->
+<!-- 				</Recovery> -->
+<!-- 			</Interrupt> -->
+<!-- 			<Interrupt type="Maintenance" applyTo="EachTool"> -->
+<!-- 				<Occurrence> -->
+<!-- 					<Distribution name="Exponential"> -->
+<!-- 						<Para unit="Hour">660</Para> -->
+<!-- 					</Distribution> -->
+<!-- 				</Occurrence> -->
+<!-- 				<Recovery> -->
+<!-- 					<Distribution name="Exponential"> -->
+<!-- 						<Para unit="Minute">270</Para> -->
+<!-- 					</Distribution> -->
+<!-- 				</Recovery> -->
+<!-- 			</Interrupt> -->
+			<Interrupt type="Maintenance" applyTo="SpecifyTool">
+				<ToolIndex>0</ToolIndex>
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">300</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">360</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="SpecifyTool">
+				<ToolIndex>1</ToolIndex>
+				<Occurrence>
+					<Distribution name="Constant">
+						<Para unit="Hour">460</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Constant">
+						<Para unit="Minute">270</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+
+		</Interrupts>
+
+	</ToolGroup>
+	<ToolGroup name="Implant">
+		<ToolNumber>2</ToolNumber>
+		<Rule>SPT</Rule>
+		<BufferType>AllInOne</BufferType>
+		<BufferSize>12</BufferSize>
+		<Batchs isBatch="False" />
+		<Interrupts>
+<!-- 			<Interrupt type="Breakdown" applyTo="EachTool"> -->
+<!-- 				<Occurrence> -->
+<!-- 					<Distribution name="Exponential"> -->
+<!-- 						<Para unit="Hour">717</Para> -->
+<!-- 					</Distribution> -->
+<!-- 				</Occurrence> -->
+<!-- 				<Recovery> -->
+<!-- 					<Distribution name="Exponential"> -->
+<!-- 						<Para unit="Minute">180</Para> -->
+<!-- 					</Distribution> -->
+<!-- 				</Recovery> -->
+<!-- 			</Interrupt> -->
+<!-- 			<Interrupt type="Maintenance" applyTo="EachTool"> -->
+<!-- 				<Occurrence> -->
+<!-- 					<Distribution name="Exponential"> -->
+<!-- 						<Para unit="Hour">160</Para> -->
+<!-- 					</Distribution> -->
+<!-- 				</Occurrence> -->
+<!-- 				<Recovery> -->
+<!-- 					<Distribution name="Exponential"> -->
+<!-- 						<Para unit="Minute">120</Para> -->
+<!-- 					</Distribution> -->
+<!-- 				</Recovery> -->
+<!-- 			</Interrupt> -->
+			<Interrupt type="Maintenance" applyTo="SpecifyTool">
+				<ToolIndex>0</ToolIndex>
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">600</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">160</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="SpecifyTool">
+				<ToolIndex>1</ToolIndex>
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">500</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">70</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+
+		</Interrupts>
+	</ToolGroup>
+	<ToolGroup name="Photo">
+		<ToolNumber>1</ToolNumber>
+		<Rule>SPT</Rule>
+		<BufferType>AllInOne</BufferType>
+		<BufferSize>12</BufferSize>
+		<Batchs isBatch="False" />
+				<Interrupts>
+			<Interrupt type="Breakdown" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">2000</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">300</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+			<Interrupt type="Maintenance" applyTo="EachTool">
+				<Occurrence>
+					<Distribution name="Exponential">
+						<Para unit="Hour">700</Para>
+					</Distribution>
+				</Occurrence>
+				<Recovery>
+					<Distribution name="Exponential">
+						<Para unit="Minute">360</Para>
+					</Distribution>
+				</Recovery>
+			</Interrupt>
+
+		</Interrupts>
+	</ToolGroup>
+
+</ToolGroups>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SummaryResults" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="48"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["G:\\project\\AgentBasedSim\\result\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="xPath">
+		<![CDATA[/Simulation]]>
+	</queryString>
+	<field name="Mode" class="java.lang.String">
+		<fieldDescription><![CDATA[Mode]]></fieldDescription>
+	</field>
+	<field name="BeginTime" class="java.lang.String">
+		<fieldDescription><![CDATA[BeginTime]]></fieldDescription>
+	</field>
+	<field name="RunTime" class="java.lang.String">
+		<fieldDescription><![CDATA[RunTime]]></fieldDescription>
+	</field>
+	<field name="SimulationTime" class="java.lang.String">
+		<fieldDescription><![CDATA[SimulationTime]]></fieldDescription>
+	</field>
+	<field name="ReleasePolicy" class="java.lang.String">
+		<fieldDescription><![CDATA[ReleasePolicy]]></fieldDescription>
+	</field>
+	<field name="ReleasePolicyPara" class="java.lang.String">
+		<fieldDescription><![CDATA[ReleasePolicyPara]]></fieldDescription>
+	</field>
+	<field name="ProductNum" class="java.lang.String">
+		<fieldDescription><![CDATA[ProductNum]]></fieldDescription>
+	</field>
+	<field name="AvgProcessStep" class="java.lang.String">
+		<fieldDescription><![CDATA[AvgProcessStep]]></fieldDescription>
+	</field>
+	<field name="ToolGroupNum" class="java.lang.String">
+		<fieldDescription><![CDATA[ToolGroupNum]]></fieldDescription>
+	</field>
+	<field name="ToolpNum" class="java.lang.String">
+		<fieldDescription><![CDATA[ToolpNum]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="480" splitType="Stretch">
+			<staticText>
+				<reportElement x="205" y="19" width="138" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Simulation Summary]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="157" y="103" width="147" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Mode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="123" width="147" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{BeginTime}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="143" width="147" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{RunTime}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="163" width="147" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{SimulationTime}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="183" width="147" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ReleasePolicy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="203" width="147" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ReleasePolicyPara}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="263" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ProductNum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="283" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{AvgProcessStep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="223" width="147" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ToolGroupNum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="243" width="147" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ToolpNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="103" width="121" height="20"/>
+				<textElement/>
+				<text><![CDATA[Model Name: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="123" width="121" height="20"/>
+				<textElement/>
+				<text><![CDATA[Simulation Begin Time:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="143" width="121" height="20"/>
+				<textElement/>
+				<text><![CDATA[Simulation Run Time:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="68" width="143" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Simulation Information]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="163" width="121" height="20"/>
+				<textElement/>
+				<text><![CDATA[Simulation Time:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="183" width="121" height="20"/>
+				<textElement/>
+				<text><![CDATA[Release Policy:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="203" width="121" height="20"/>
+				<textElement/>
+				<text><![CDATA[Release Policy Para.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="223" width="121" height="20"/>
+				<textElement/>
+				<text><![CDATA[Tool Group Number:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="243" width="121" height="20"/>
+				<textElement/>
+				<text><![CDATA[Tool Number:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="263" width="121" height="20"/>
+				<textElement/>
+				<text><![CDATA[Product Number:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="283" width="121" height="20"/>
+				<textElement/>
+				<text><![CDATA[Average Step Number:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="303" width="121" height="20"/>
+				<textElement/>
+				<text><![CDATA[Dispatch Rule:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="157" y="303" width="147" height="20"/>
+				<textElement/>
+				<text><![CDATA[spcified in the tool group data]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="36" y="323" width="519" height="50"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("/Simulation/Product")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "SummarySubResult3.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="36" y="443" width="519" height="37"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("/Simulation/Product")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "SummarySubResult4.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="74" splitType="Stretch">
+			<subreport>
+				<reportElement x="36" y="0" width="519" height="63"/>
+				<subreportParameter name="IsDetail"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("/Simulation/ToolGroup")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "SummarySubreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="93" splitType="Stretch">
+			<subreport>
+				<reportElement x="36" y="0" width="519" height="60"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("/Simulation/ToolGroup")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "SummarySubreport2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</columnHeader>
+</jasperReport>

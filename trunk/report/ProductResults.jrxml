@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Simulation Results" language="groovy" pageWidth="842" pageHeight="1190" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="xPath">
+		<![CDATA[/Results/Products/Product]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[@name]]></fieldDescription>
+	</field>
+	<field name="ReleasedNum" class="java.lang.Integer">
+		<fieldDescription><![CDATA[ReleasedNum]]></fieldDescription>
+	</field>
+	<field name="ReleaseRatio" class="java.lang.Float">
+		<fieldDescription><![CDATA[ReleaseRatio]]></fieldDescription>
+	</field>
+	<field name="FinishedNum" class="java.lang.Integer">
+		<fieldDescription><![CDATA[FinishedNum]]></fieldDescription>
+	</field>
+	<field name="Productivity" class="java.lang.Float">
+		<fieldDescription><![CDATA[Productivity]]></fieldDescription>
+	</field>
+	<field name="AvgWIPLevel" class="java.lang.Float">
+		<fieldDescription><![CDATA[AvgWIPLevel]]></fieldDescription>
+	</field>
+	<field name="MaxWIPLevel" class="java.lang.Integer">
+		<fieldDescription><![CDATA[MaxWIPLevel]]></fieldDescription>
+	</field>
+	<field name="MinCycleTime" class="java.lang.Float">
+		<fieldDescription><![CDATA[MinCycleTime]]></fieldDescription>
+	</field>
+	<field name="AvgCycleTime" class="java.lang.Float">
+		<fieldDescription><![CDATA[AvgCycleTime]]></fieldDescription>
+	</field>
+	<field name="MaxCycleTime" class="java.lang.Float">
+		<fieldDescription><![CDATA[MaxCycleTime]]></fieldDescription>
+	</field>
+	<field name="RawProcessingTime" class="java.lang.Float">
+		<fieldDescription><![CDATA[RawProcessingTime]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="341" y="18" width="100" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Product Data]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="28" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="656" y="8" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement x="57" y="17" width="72" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Product]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="28" width="56" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="199" y="28" width="61" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="261" y="28" width="50" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="28" width="72" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Productivity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="383" y="28" width="72" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Average]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="28" width="53" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Max]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="513" y="28" width="49" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Min]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="570" y="28" width="72" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Average]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="642" y="28" width="57" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Max]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="699" y="28" width="44" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Raw]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="413" y="6" width="76" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[WIP Level(lot)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="157" y="7" width="73" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Released(lot)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="7" width="62" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Finished(lot)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="592" y="6" width="85" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Cycle Time(hour)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="41" y="47" width="717" height="1"/>
+			</line>
+			<line>
+				<reportElement x="41" y="1" width="717" height="1"/>
+			</line>
+			<line>
+				<reportElement x="527" y="24" width="222" height="1"/>
+			</line>
+			<line>
+				<reportElement x="395" y="23" width="104" height="1"/>
+			</line>
+			<line>
+				<reportElement x="271" y="23" width="103" height="1"/>
+			</line>
+			<line>
+				<reportElement x="143" y="23" width="100" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27">
+			<textField>
+				<reportElement x="59" y="0" width="72" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0;-###0" isBlankWhenNull="true">
+				<reportElement x="143" y="0" width="56" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ReleasedNum}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00">
+				<reportElement x="199" y="0" width="61" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ReleaseRatio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0">
+				<reportElement x="261" y="0" width="50" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{FinishedNum}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00">
+				<reportElement x="311" y="0" width="72" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Productivity}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00">
+				<reportElement x="383" y="0" width="72" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{AvgWIPLevel}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0">
+				<reportElement x="455" y="0" width="53" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{MaxWIPLevel}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00">
+				<reportElement x="513" y="0" width="49" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{MinCycleTime}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00">
+				<reportElement x="570" y="0" width="72" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{AvgCycleTime}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00">
+				<reportElement x="642" y="0" width="57" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{MaxCycleTime}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00">
+				<reportElement x="699" y="0" width="44" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{RawProcessingTime}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="17" splitType="Stretch">
+			<line>
+				<reportElement x="41" y="7" width="717" height="1"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="53" splitType="Stretch">
+			<textField>
+				<reportElement x="341" y="4" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="421" y="4" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

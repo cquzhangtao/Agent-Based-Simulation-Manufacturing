@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xs:include schemaLocation="Common.xsd"></xs:include>
+	<xs:element name="TransportLines">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TransportLine" type="transportLine"
+					maxOccurs="unbounded"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+
+	</xs:element>
+
+	<xs:complexType name="transportLine">
+		<xs:all>
+			<xs:element name="Transportation" type="xs:string"></xs:element>
+		</xs:all>
+		<xs:attribute name="from" type="letterOrNumberString"
+			use="required"></xs:attribute>
+		<xs:attribute name="to" type="letterOrNumberString" use="required"></xs:attribute>
+	</xs:complexType>
+	
+</xs:schema>

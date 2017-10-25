@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Processes>
+	<Process name="Pa">
+		<Steps>
+			<Step name="s1">
+				<ToolGroupName>MA</ToolGroupName>
+				<ProcessTime>55</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+			<Step name="s2">
+				<ToolGroupName>MB</ToolGroupName>
+				<ProcessTime>68</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<Setups type="sequence-dependent">
+					<Setup typeofPerJob="Pa" stepofPreJob="s2" time="0" />
+					<Setup typeofPerJob="Pb" stepofPreJob="s4" time="9" />
+					<Setup typeofPerJob="Pc" stepofPreJob="s4" time="5" />
+					<Setup typeofPerJob="Pd" stepofPreJob="s3" time="7" />
+				</Setups>
+			</Step>
+			<Step name="s3">
+				<ToolGroupName>MC</ToolGroupName>
+				<ProcessTime>75</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<Setups type="sequence-dependent">
+					<Setup typeofPerJob="Pa" stepofPreJob="s3" time="0" />
+					<Setup typeofPerJob="Pb" stepofPreJob="s1" time="10" />
+				</Setups>
+			</Step>
+			<Step name="s4">
+				<ToolGroupName>ME</ToolGroupName>
+				<ProcessTime>45</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+			<Step name="s5">
+				<ToolGroupName>MF</ToolGroupName>
+				<ProcessTime>60</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+		</Steps>
+	</Process>
+	<Process name="Pb">
+		<Steps>
+
+			<Step name="s1">
+				<ToolGroupName>MC</ToolGroupName>
+				<ProcessTime>41</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<Setups type="sequence-dependent">
+					<Setup typeofPerJob="Pa" stepofPreJob="s3" time="15" />
+					<Setup typeofPerJob="Pb" stepofPreJob="s1" time="0" />
+				</Setups>
+			</Step>
+			<Step name="s2">
+				<ToolGroupName>ME</ToolGroupName>
+				<ProcessTime>30</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+			<Step name="s3">
+				<ToolGroupName>MA</ToolGroupName>
+				<ProcessTime>70</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+			<Step name="s4">
+				<ToolGroupName>MB</ToolGroupName>
+				<ProcessTime>78</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<Setups type="sequence-dependent">
+					<Setup typeofPerJob="Pa" stepofPreJob="s2" time="9" />
+					<Setup typeofPerJob="Pb" stepofPreJob="s4" time="0" />
+					<Setup typeofPerJob="Pc" stepofPreJob="s4" time="7" />
+					<Setup typeofPerJob="Pd" stepofPreJob="s3" time="5" />
+				</Setups>
+			</Step>
+			<Step name="s5">
+				<ToolGroupName>MF</ToolGroupName>
+				<ProcessTime>50</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+		</Steps>
+	</Process>
+		<Process name="Pc">
+		<Steps>
+			<Step name="s1">
+				<ToolGroupName>ME</ToolGroupName>
+				<ProcessTime>35</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+			<Step name="s2">
+				<ToolGroupName>MF</ToolGroupName>
+				<ProcessTime>50</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+			<Step name="s3">
+				<ToolGroupName>MD</ToolGroupName>
+				<ProcessTime>75</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<Setups type="sequence-dependent">
+					<Setup typeofPerJob="Pc" stepofPreJob="s3" time="0" />
+					<Setup typeofPerJob="Pd" stepofPreJob="s1" time="10" />
+				</Setups>
+			</Step>
+			<Step name="s4">
+				<ToolGroupName>MB</ToolGroupName>
+				<ProcessTime>68</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<Setups type="sequence-dependent">
+					<Setup typeofPerJob="Pa" stepofPreJob="s2" time="7" />
+					<Setup typeofPerJob="Pb" stepofPreJob="s4" time="9" />
+					<Setup typeofPerJob="Pc" stepofPreJob="s4" time="0" />
+					<Setup typeofPerJob="Pd" stepofPreJob="s3" time="5" />
+				</Setups>
+			</Step>
+			<Step name="s5">
+				<ToolGroupName>MA</ToolGroupName>
+				<ProcessTime>60</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+
+		</Steps>
+	</Process>
+		<Process name="Pd">
+		<Steps>
+			<Step name="s1">
+				<ToolGroupName>MD</ToolGroupName>
+				<ProcessTime>25</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<Setups type="sequence-dependent">
+					<Setup typeofPerJob="Pc" stepofPreJob="s3" time="15" />
+					<Setup typeofPerJob="Pd" stepofPreJob="s1" time="0" />
+				</Setups>
+			</Step>
+			<Step name="s2">
+				<ToolGroupName>MF</ToolGroupName>
+				<ProcessTime>55</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+			<Step name="s3">
+				<ToolGroupName>MB</ToolGroupName>
+				<ProcessTime>73</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<Setups type="sequence-dependent">
+					<Setup typeofPerJob="Pa" stepofPreJob="s2" time="5" />
+					<Setup typeofPerJob="Pb" stepofPreJob="s4" time="7" />
+					<Setup typeofPerJob="Pc" stepofPreJob="s4" time="9" />
+					<Setup typeofPerJob="Pd" stepofPreJob="s3" time="0" />
+				</Setups>
+			</Step>
+			<Step name="s4">
+				<ToolGroupName>MA</ToolGroupName>
+				<ProcessTime>45</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+			<Step name="s5">
+				<ToolGroupName>ME</ToolGroupName>
+				<ProcessTime>30</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+
+
+		</Steps>
+	</Process>
+</Processes>

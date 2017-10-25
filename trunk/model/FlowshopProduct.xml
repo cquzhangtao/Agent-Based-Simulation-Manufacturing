@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Products>
+	<ReleasePolicy type="ConstantTime" active="False">
+		<IntervalTime>100</IntervalTime>
+	</ReleasePolicy>
+	<ReleasePolicy type="ConstantWIP" active="False">
+		<IntervalTime>120</IntervalTime>
+		<ConstantWIP>13</ConstantWIP>
+	</ReleasePolicy>
+	<ReleasePolicy type="ConstantTimeDetail" active="False" />
+	<ReleasePolicy type="ConstantWIPDetail" active="False" />
+	<ReleasePolicy type="PlanLotAndDueDate" active="False" />
+	<ReleasePolicy type="Bottelneck" active="True" >
+		<BeginningPolicy>ConstantTime</BeginningPolicy>
+		<IntervalTime>90</IntervalTime>
+	</ReleasePolicy>
+
+
+	<Product type="Pa">
+		<PlanLotNum>600</PlanLotNum>
+		<PlanProduceTime>40</PlanProduceTime>
+		<ReleaseProb>0.333</ReleaseProb>
+		<ReleaseIntervalTime distribution="normal">
+			<Parameter name="mean">40</Parameter>
+			<Parameter name="variance">10</Parameter>
+		</ReleaseIntervalTime>
+		<ReleaseConstantWIP>10</ReleaseConstantWIP>
+		<Process>Pa</Process>
+	</Product>
+
+</Products>

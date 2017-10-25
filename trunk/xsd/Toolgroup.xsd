@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xs:include schemaLocation="Common.xsd" />
+	<xs:element name="ToolGroups">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ToolGroup" type="toolGroup" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="toolGroup">
+		<xs:all>
+			<xs:element name="ToolNumber" type="positiveNumber"
+				default="1" />
+			<xs:element name="BufferSize" type="xs:int" default="50" />
+			<xs:element name="Rule" type="rules" />
+			<xs:element name="Batches" type="batches" minOccurs="0" />
+			<xs:element name="Interrupts" type="interrupts" minOccurs="0"></xs:element>
+			<xs:element name="MultiObjWeight" type="multiObjective"></xs:element>
+			<xs:element name="Bottleneck" type="bottleneck" minOccurs="0"></xs:element>
+			<xs:element name="Setups" type="setupInfo" minOccurs="0"></xs:element>
+		</xs:all>
+		<xs:attribute name="name" type="letterOrNumberString"
+			use="required"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="interrupts">
+		<xs:sequence>
+			<xs:element name="Interrupt" type="interrupt" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="interrupt">
+		<xs:all>
+			<xs:element name="Occurrence" type="distributedValue"></xs:element>
+			<xs:element name="Recovery" type="distributedValue"></xs:element>
+		</xs:all>
+		<xs:attribute name="type" type="interruptType" use="required"></xs:attribute>
+		<xs:attribute name="applyTo" type="applyto" use="required"></xs:attribute>
+		<xs:attribute name="specifiedIndex" type="xs:int"></xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="interruptType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="breakdown"></xs:enumeration>
+			<xs:enumeration value="maintenance"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="applyto">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OneTool"></xs:enumeration>
+			<xs:enumeration value="EachTool"></xs:enumeration>
+			<xs:enumeration value="SpecifyTool"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="setupInfo">
+		<xs:sequence>
+			<xs:element name="Setup" type="setup" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="setup">
+		<xs:sequence>
+			<xs:choice>
+				<xs:group ref="setupJob"></xs:group>
+				<xs:group ref="setupBatch"></xs:group>
+				<xs:element name="curBatchID" type="xs:int" />
+				<xs:group ref="setupJob1"></xs:group>
+			</xs:choice>
+			<xs:element name="setupTime" type="distributedValue" />
+		</xs:sequence>
+		<xs:attribute name="type" type="setupType" use="required" />
+	</xs:complexType>
+	<xs:group name="setupJob">
+		<xs:sequence>
+			<xs:element name="preJobType" type="xs:string" />
+			<xs:element name="preJobStep" type="xs:string" />
+			<xs:group ref="setupJob1"></xs:group>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="setupJob1">
+		<xs:sequence>
+			<xs:element name="curJobType" type="xs:string" />
+			<xs:element name="curJobStep" type="xs:string" />
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="setupBatch">
+		<xs:sequence>
+			<xs:element name="preBatchID" type="xs:int" />
+			<xs:element name="curBatchID" type="xs:int" />
+		</xs:sequence>
+	</xs:group>
+
+	<xs:complexType name="bottleneck">
+		<xs:all>
+			<xs:element name="Level" type="xs:int"></xs:element>
+			<xs:element name="AimBufferSize" type="xs:int"></xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="multiObjective">
+		<xs:all>
+			<xs:element name="RuleWeight" type="zero2oneFloat"
+				default="1.0"></xs:element>
+			<xs:element name="AvoidSetupWeight" type="zero2oneFloat"
+				default="0.0"></xs:element>
+			<xs:element name="HotLotWeight" type="zero2oneFloat"
+				default="0.0"></xs:element>
+			<xs:element name="CriticalTimeWeight" type="zero2oneFloat"
+				default="0.0"></xs:element>
+		</xs:all>
+	</xs:complexType>
+
+	<xs:complexType name="batches">
+		<xs:sequence>
+			<xs:element name="Batch" type="batchInfo" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="batchInfo">
+		<xs:sequence>
+			<xs:element name="Job" type="job" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:int" use="required"></xs:attribute>
+		<xs:attribute name="size" type="xs:int" use="required"></xs:attribute>
+		<xs:attribute name="minSize" type="xs:int"></xs:attribute>
+		<xs:attribute name="maxSize" type="xs:int"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="job">
+		<xs:attribute name="product" type="xs:string" use="required"></xs:attribute>
+		<xs:attribute name="step" type="xs:string"></xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="rules">
+		<xs:sequence>
+			<xs:element name="Parameter" type="xs:double" minOccurs="0"
+				maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="type" type="ruleEnum" use="required"></xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="setupType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="sequence-independent"></xs:enumeration>
+			<xs:enumeration value="sequence-dependent"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ruleEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FIFO" />
+			<xs:enumeration value="LIFO" />
+			<xs:enumeration value="SPRT" />
+			<xs:enumeration value="LPRT" />
+			<xs:enumeration value="SPT" />
+			<xs:enumeration value="LPT" />
+			<xs:enumeration value="EAT" />
+			<xs:enumeration value="LAT" />
+			<xs:enumeration value="SRPS" />
+			<xs:enumeration value="AT_RPT" />
+			<xs:enumeration value="MST" />
+			<xs:enumeration value="EDD" />
+			<xs:enumeration value="MDD" />
+			<xs:enumeration value="CR" />
+			<xs:enumeration value="SPRO" />
+			<xs:enumeration value="LookAhead" />
+		</xs:restriction>
+	</xs:simpleType>
+
+
+</xs:schema>

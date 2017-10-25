@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Products>
+	<ReleasePolicy type="ConstantTimeDetail" active="False" />
+		<ReleasePolicy type="Bottelneck" active="True">
+		<BeginningPolicy>ConstantTimeDetail</BeginningPolicy>
+	</ReleasePolicy>
+	<Product type="38090964_B5C">
+		<ReleaseIntervalTime distribution="constant">
+			<Parameter name="mean">1328.572</Parameter>
+			<Parameter name="variance">10</Parameter>
+		</ReleaseIntervalTime>
+		<Process>38090964_B5C</Process>
+	</Product>
+	<Product type="07009066_B6HF">
+		<ReleaseIntervalTime distribution="constant">
+			<Parameter name="mean">5078.692</Parameter>
+			<Parameter name="variance">10</Parameter>
+		</ReleaseIntervalTime>
+		<Process>07009066_B6HF</Process>
+	</Product>
+	<Product type="38090908_C4PH">
+		<ReleaseIntervalTime distribution="constant">
+			<Parameter name="mean">2435.35</Parameter>
+			<Parameter name="variance">10</Parameter>
+		</ReleaseIntervalTime>
+		<Process>38090908_C4PH</Process>
+	</Product>
+	<Product type="08002618_C5F">
+		<ReleaseIntervalTime distribution="constant">
+			<Parameter name="mean">1850.404</Parameter>
+			<Parameter name="variance">10</Parameter>
+		</ReleaseIntervalTime>
+		<Process>08002618_C5F</Process>
+	</Product>
+	<Product type="38090718_C5P">
+		<ReleaseIntervalTime distribution="constant">
+			<Parameter name="mean">555.626</Parameter>
+			<Parameter name="variance">10</Parameter>
+		</ReleaseIntervalTime>
+		<Process>38090718_C5P</Process>
+	</Product>
+	<Product type="38090962_C5PA">
+		<ReleaseIntervalTime distribution="constant">
+			<Parameter name="mean">833.896</Parameter>
+			<Parameter name="variance">10</Parameter>
+		</ReleaseIntervalTime>
+		<Process>38090962_C5PA</Process>
+	</Product>
+	<Product type="07004059_C6N3">
+		<ReleaseIntervalTime distribution="constant">
+			<Parameter name="mean">2459.504</Parameter>
+			<Parameter name="variance">10</Parameter>
+		</ReleaseIntervalTime>
+		<Process>07004059_C6N3</Process>
+	</Product>
+	<Product type="08002596_C6N2">
+		<ReleaseIntervalTime distribution="constant">
+			<Parameter name="mean">2166.1079999999997</Parameter>
+			<Parameter name="variance">10</Parameter>
+		</ReleaseIntervalTime>
+		<Process>08002596_C6N2</Process>
+	</Product>
+	<Product type="38092046_OX2">
+		<ReleaseIntervalTime distribution="constant">
+			<Parameter name="mean">2016.608</Parameter>
+			<Parameter name="variance">10</Parameter>
+		</ReleaseIntervalTime>
+		<Process>38092046_OX2</Process>
+	</Product>
+</Products>

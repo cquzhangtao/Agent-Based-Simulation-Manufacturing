@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ToolGroups>
+<!--	<Dispatcher path="./model/Jobshop_20130314023158100dayslight.dispatcher"/>-->
+	<ToolGroup name="MA">
+		<ToolNumber>1</ToolNumber>
+		<Rule>FIFO</Rule>
+		<BufferSize>50000</BufferSize>		
+	</ToolGroup>	
+</ToolGroups>

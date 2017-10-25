@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  elementFormDefault="qualified">
+<xs:complexType name="distributedValue">
+		<xs:sequence>
+			<xs:element name="Parameter" type="parameter" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="distribution" type="distributionEnum"
+			use="required"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="parameter">
+		<xs:simpleContent>
+			<xs:extension base="xs:double">
+				<xs:attribute name="name" type="ParameterName"  use="required"></xs:attribute>
+				<xs:attribute name="unit" type="timeunit"  use="required"></xs:attribute>
+			</xs:extension>
+
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="timeunit">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="hour" />
+			<xs:enumeration value="year" />
+			<xs:enumeration value="month" />
+			<xs:enumeration value="day" />
+			<xs:enumeration value="minute" />
+			<xs:enumeration value="second" />
+			<xs:enumeration value="lot" />
+			<xs:enumeration value="null" />
+		</xs:restriction>
+	</xs:simpleType>
+		<xs:simpleType name="distributionEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Exponential" />
+			<xs:enumeration value="Poisson" />
+			<xs:enumeration value="Uniform" />
+			<xs:enumeration value="Normal" />
+			<xs:enumeration value="Binomial" />
+			<xs:enumeration value="Constant" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ParameterName">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Max" />
+			<xs:enumeration value="Min" />
+			<xs:enumeration value="Mean" />
+		</xs:restriction>
+	</xs:simpleType>
+		<xs:simpleType name="positiveNumber">
+		<xs:restriction base="xs:int">
+			<xs:minExclusive value="0" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="greater1Number">
+		<xs:restriction base="xs:int">
+			<xs:minExclusive value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="letterOrNumberString">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z0-9_]+" />
+		</xs:restriction>
+	</xs:simpleType>
+		<xs:simpleType name="zero2oneFloat">
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="0.0"></xs:minInclusive>
+			<xs:maxInclusive value="1.0"></xs:maxInclusive>
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

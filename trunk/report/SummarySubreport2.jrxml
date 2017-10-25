@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report4_subreport2" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isFloatColumnFooter="true">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="xPath">
+		<![CDATA[/Simulation/ToolGroup]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[@name]]></fieldDescription>
+	</field>
+	<field name="FreeRatio" class="java.lang.Float">
+		<fieldDescription><![CDATA[FreeRatio]]></fieldDescription>
+	</field>
+	<field name="SetupRatio" class="java.lang.Float">
+		<fieldDescription><![CDATA[SetupRatio]]></fieldDescription>
+	</field>
+	<field name="processRatio" class="java.lang.Float">
+		<fieldDescription><![CDATA[processRatio]]></fieldDescription>
+	</field>
+	<field name="blockRatio" class="java.lang.Float">
+		<fieldDescription><![CDATA[blockRatio]]></fieldDescription>
+	</field>
+	<field name="breakdownRatio" class="java.lang.Float">
+		<fieldDescription><![CDATA[breakdownRatio]]></fieldDescription>
+	</field>
+	<field name="maintenanceRatio" class="java.lang.Float">
+		<fieldDescription><![CDATA[maintenanceRatio]]></fieldDescription>
+	</field>
+	<field name="TotalSetupTime" class="java.lang.Float">
+		<fieldDescription><![CDATA[TotalSetupTime]]></fieldDescription>
+	</field>
+	<field name="InterruptNum" class="java.lang.Float">
+		<fieldDescription><![CDATA[InterruptNum]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="55" splitType="Stretch">
+			<line>
+				<reportElement x="15" y="8" width="466" height="1"/>
+			</line>
+			<line>
+				<reportElement x="16" y="48" width="466" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="31" y="30" width="48" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Free]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="94" y="30" width="46" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Setup]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="30" width="50" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Process]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="30" width="38" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Block]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="30" width="43" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Breakd.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="307" y="30" width="44" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Maint.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="373" y="9" width="28" height="39"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[SetupTime(hour)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="422" y="12" width="50" height="31"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Interrupt Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="127" y="12" width="98" height="15"/>
+				<textElement/>
+				<text><![CDATA[Utilization Ratio(%)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="31" y="27" width="320" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField pattern="###0.00">
+				<reportElement x="31" y="0" width="48" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{FreeRatio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00">
+				<reportElement x="94" y="0" width="46" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{SetupRatio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00">
+				<reportElement x="151" y="0" width="50" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{processRatio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00">
+				<reportElement x="214" y="0" width="38" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{blockRatio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00">
+				<reportElement x="257" y="0" width="43" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{breakdownRatio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00">
+				<reportElement x="307" y="0" width="44" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{maintenanceRatio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0;-###0">
+				<reportElement x="363" y="0" width="48" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{TotalSetupTime}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0;-###0">
+				<reportElement x="422" y="0" width="50" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{InterruptNum}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="11">
+			<line>
+				<reportElement x="15" y="4" width="466" height="1"/>
+			</line>
+		</band>
+	</columnFooter>
+</jasperReport>

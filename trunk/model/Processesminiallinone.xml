@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Processes>
+	<Process name="Pa">
+		<Steps>
+			<Step name="1Diffusion">
+				<ToolGroupName>Diffusion</ToolGroupName>
+				<ProcessTime>285</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<BatchID>1</BatchID>
+			</Step>
+			<Step name="2Implant">
+				<ToolGroupName>Implant</ToolGroupName>
+				<ProcessTime>60</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+			<Step name="3Photo">
+				<ToolGroupName>Photo</ToolGroupName>
+				<ProcessTime>75</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<Setups type="sequence-dependent">
+					<Setup typeofPerJob="Pa" stepofPreJob="3Photo" time="0" />
+					<Setup typeofPerJob="Pa" stepofPreJob="6Photo" time="10" />
+					<Setup typeofPerJob="Pb" stepofPreJob="3Photo" time="5" />
+					<Setup typeofPerJob="Pb" stepofPreJob="6Photo" time="12" />
+					<Setup typeofPerJob="TW" stepofPreJob="3Photo" time="5" />
+					<Setup typeofPerJob="TW" stepofPreJob="6Photo" time="12" />
+
+				</Setups>
+			</Step>
+			<Step name="4Implant">
+				<ToolGroupName>Implant</ToolGroupName>
+				<ProcessTime>80</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+			<Step name="5Diffusion">
+				<ToolGroupName>Diffusion</ToolGroupName>
+				<ProcessTime>315</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<BatchID>2</BatchID>
+			</Step>
+			<Step name="6Photo">
+				<ToolGroupName>Photo</ToolGroupName>
+				<ProcessTime>30</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<Setups type="sequence-dependent">
+					<Setup typeofPerJob="Pa" stepofPreJob="6Photo" time="0" />
+					<Setup typeofPerJob="Pa" stepofPreJob="3Photo" time="10" />
+					<Setup typeofPerJob="Pb" stepofPreJob="6Photo" time="5" />
+					<Setup typeofPerJob="Pb" stepofPreJob="3Photo" time="12" />
+					<Setup typeofPerJob="TW" stepofPreJob="6Photo" time="5" />
+					<Setup typeofPerJob="TW" stepofPreJob="3Photo" time="12" />
+
+				</Setups>
+			</Step>
+		</Steps>
+	</Process>
+	<Process name="Pb">
+		<Steps>
+			<Step name="1Diffusion">
+				<ToolGroupName>Diffusion</ToolGroupName>
+				<ProcessTime>285</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<BatchID>3</BatchID>
+			</Step>
+			<Step name="2Implant">
+				<ToolGroupName>Implant</ToolGroupName>
+				<ProcessTime>60</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+			<Step name="3Photo">
+				<ToolGroupName>Photo</ToolGroupName>
+				<ProcessTime>75</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<Setups type="sequence-dependent">
+					<Setup typeofPerJob="Pa" stepofPreJob="3Photo" time="0" />
+					<Setup typeofPerJob="Pa" stepofPreJob="6Photo" time="10" />
+					<Setup typeofPerJob="Pb" stepofPreJob="3Photo" time="5" />
+					<Setup typeofPerJob="Pb" stepofPreJob="6Photo" time="12" />
+					<Setup typeofPerJob="TW" stepofPreJob="3Photo" time="5" />
+					<Setup typeofPerJob="TW" stepofPreJob="6Photo" time="12" />
+
+				</Setups>
+			</Step>
+			<Step name="4Implant">
+				<ToolGroupName>Implant</ToolGroupName>
+				<ProcessTime>80</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+			<Step name="5Diffusion">
+				<ToolGroupName>Diffusion</ToolGroupName>
+				<ProcessTime>315</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<BatchID>4</BatchID>
+			</Step>
+			<Step name="6Photo">
+				<ToolGroupName>Photo</ToolGroupName>
+				<ProcessTime>30</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<Setups type="sequence-dependent">
+					<Setup typeofPerJob="Pa" stepofPreJob="6Photo" time="0" />
+					<Setup typeofPerJob="Pa" stepofPreJob="3Photo" time="10" />
+					<Setup typeofPerJob="Pb" stepofPreJob="6Photo" time="5" />
+					<Setup typeofPerJob="Pb" stepofPreJob="3Photo" time="12" />
+					<Setup typeofPerJob="TW" stepofPreJob="6Photo" time="5" />
+					<Setup typeofPerJob="TW" stepofPreJob="3Photo" time="12" />
+
+				</Setups>
+			</Step>
+		</Steps>
+	</Process>
+	<Process name="TW">
+		<Steps>
+			<Step name="1Diffusion">
+				<ToolGroupName>Diffusion</ToolGroupName>
+				<ProcessTime>285</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<BatchID>1,3</BatchID>
+			</Step>
+			<Step name="2Implant">
+				<ToolGroupName>Implant</ToolGroupName>
+				<ProcessTime>60</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+			<Step name="3Photo">
+				<ToolGroupName>Photo</ToolGroupName>
+				<ProcessTime>75</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<Setups type="sequence-dependent">
+					<Setup typeofPerJob="Pa" stepofPreJob="3Photo" time="0" />
+					<Setup typeofPerJob="Pa" stepofPreJob="6Photo" time="10" />
+					<Setup typeofPerJob="Pb" stepofPreJob="3Photo" time="5" />
+					<Setup typeofPerJob="Pb" stepofPreJob="6Photo" time="12" />
+					<Setup typeofPerJob="TW" stepofPreJob="3Photo" time="5" />
+					<Setup typeofPerJob="TW" stepofPreJob="6Photo" time="12" />
+
+				</Setups>
+			</Step>
+			<Step name="4Implant">
+				<ToolGroupName>Implant</ToolGroupName>
+				<ProcessTime>80</ProcessTime>
+				<TransportTime>0</TransportTime>
+			</Step>
+			<Step name="5Diffusion">
+				<ToolGroupName>Diffusion</ToolGroupName>
+				<ProcessTime>315</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<BatchID>2,4</BatchID>
+			</Step>
+			<Step name="6Photo">
+				<ToolGroupName>Photo</ToolGroupName>
+				<ProcessTime>30</ProcessTime>
+				<TransportTime>0</TransportTime>
+				<Setups type="sequence-dependent">
+					<Setup typeofPerJob="Pa" stepofPreJob="6Photo" time="0" />
+					<Setup typeofPerJob="Pa" stepofPreJob="3Photo" time="10" />
+					<Setup typeofPerJob="Pb" stepofPreJob="6Photo" time="5" />
+					<Setup typeofPerJob="Pb" stepofPreJob="3Photo" time="12" />
+					<Setup typeofPerJob="TW" stepofPreJob="6Photo" time="5" />
+					<Setup typeofPerJob="TW" stepofPreJob="3Photo" time="12" />
+				</Setups>
+			</Step>
+		</Steps>
+	</Process>
+</Processes>

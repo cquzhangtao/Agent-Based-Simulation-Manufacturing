@@ -1,0 +1,165 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xs:include schemaLocation="Common.xsd"></xs:include>
+	<xs:element name="Policies">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ConsInterval" type="consinterval"
+					minOccurs="0"></xs:element>
+				<xs:element name="ConsIntervalD" type="consintervalD"
+					minOccurs="0"></xs:element>
+				<xs:element name="ConsWip" type="conswip" minOccurs="0"></xs:element>
+				<xs:element name="ConsWipD" type="conswipd" minOccurs="0"></xs:element>
+				<xs:element name="ByOrder" type="byorder" minOccurs="0"></xs:element>
+			</xs:all>
+			<xs:attribute name="selected" type="xs:string" use="required"></xs:attribute>
+		</xs:complexType>
+
+	</xs:element>
+
+	<xs:complexType name="consinterval">
+		<xs:sequence>
+			<xs:element name="Interval" type="distributedValue"></xs:element>
+			<xs:element name="ReleaseProbs">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ReleaseProb" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:decimal">
+										<xs:attribute name="product" type="letterOrNumberString"
+											use="required">
+										</xs:attribute>
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="consintervalD">
+		<xs:sequence>
+			<xs:element name="Intervals">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Interval" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="distributedValue">
+										<xs:attribute name="product" type="letterOrNumberString"
+											use="required">
+										</xs:attribute>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="conswip">
+		<xs:sequence>
+			<xs:element name="Interval" type="distributedValue"></xs:element>
+			<xs:element name="TargetWip" type="greater1Number"></xs:element>
+
+			<xs:element name="ReleaseProbs">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ReleaseProb" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:float">
+										<xs:attribute name="product" type="letterOrNumberString"
+											use="required">
+										</xs:attribute>
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="conswipd">
+		<xs:sequence>
+
+			<xs:element name="Intervals">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Interval" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="distributedValue">
+										<xs:attribute name="product" type="letterOrNumberString"
+											use="required">
+										</xs:attribute>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="TargetWips">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="TargetWip" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:int">
+										<xs:attribute name="product" type="letterOrNumberString"
+											use="required">
+										</xs:attribute>
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="byorder">
+		<xs:sequence>
+			<xs:element name="PlanLots">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PlanLot" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:int">
+										<xs:attribute name="product" type="letterOrNumberString"
+											use="required"></xs:attribute>
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+
+					</xs:sequence>
+
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="StartingTimes">
+				<xs:complexType>
+					<xs:sequence>
+							<xs:element name="StartingTime" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:date">
+										<xs:attribute name="product" type="letterOrNumberString"
+											use="required"></xs:attribute>
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

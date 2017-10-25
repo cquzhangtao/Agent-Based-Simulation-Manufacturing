@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ToolSubreport1" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isFloatColumnFooter="true">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="IsDetail" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[false]]></defaultValueExpression>
+	</parameter>
+	<queryString language="XPath">
+		<![CDATA[/ToolGroups/ToolGroup]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[@name]]></fieldDescription>
+	</field>
+	<field name="avgBufferSize" class="java.lang.Float">
+		<fieldDescription><![CDATA[avgBufferSize]]></fieldDescription>
+	</field>
+	<field name="maxBufferSize" class="java.lang.Integer">
+		<fieldDescription><![CDATA[maxBufferSize]]></fieldDescription>
+	</field>
+	<field name="avgWaitTime" class="java.lang.Float">
+		<fieldDescription><![CDATA[avgWaitTime]]></fieldDescription>
+	</field>
+	<field name="maxWaitTime" class="java.lang.Float">
+		<fieldDescription><![CDATA[maxWaitTime]]></fieldDescription>
+	</field>
+	<field name="avgBlockTime" class="java.lang.Float">
+		<fieldDescription><![CDATA[avgBlockTime]]></fieldDescription>
+	</field>
+	<field name="maxBlcokTime" class="java.lang.Float">
+		<fieldDescription><![CDATA[maxBlcokTime]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50">
+			<printWhenExpression><![CDATA[$P{IsDetail}]]></printWhenExpression>
+			<staticText>
+				<reportElement x="237" y="17" width="100" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Details]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="54">
+			<line>
+				<reportElement x="21" y="6" width="512" height="1" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="25" y="16" width="102" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Tool Group]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="26" width="45" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Average]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="206" y="26" width="55" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Max]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="272" y="26" width="52" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Average]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="26" width="59" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Max]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="409" y="27" width="55" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Average]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="464" y="27" width="52" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Max]]></text>
+			</staticText>
+			<line>
+				<reportElement x="21" y="44" width="512" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="160" y="9" width="79" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Buffer Size(lot)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="286" y="9" width="79" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Wait Time(hour)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="413" y="9" width="90" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Block Time(hour)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="413" y="25" width="100" height="1"/>
+			</line>
+			<line>
+				<reportElement x="278" y="24" width="100" height="1"/>
+			</line>
+			<line>
+				<reportElement x="148" y="24" width="100" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23">
+			<textField pattern="">
+				<reportElement x="25" y="0" width="102" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00" isBlankWhenNull="true">
+				<reportElement x="139" y="0" width="67" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{avgBufferSize}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="206" y="0" width="55" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{maxBufferSize}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00" isBlankWhenNull="true">
+				<reportElement x="272" y="0" width="52" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{avgWaitTime}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00" isBlankWhenNull="true">
+				<reportElement x="330" y="0" width="59" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{maxWaitTime}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00" isBlankWhenNull="true">
+				<reportElement x="409" y="0" width="55" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{avgBlockTime}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00" isBlankWhenNull="true">
+				<reportElement x="464" y="0" width="52" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{maxBlcokTime}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="5">
+			<line>
+				<reportElement x="21" y="2" width="511" height="1"/>
+			</line>
+		</band>
+	</columnFooter>
+</jasperReport>
