@@ -1,2 +1,2 @@
 # Introduction
-This project builds a agent-based simulator for materail flows on shop floor.
+This project builds an agent-based simulator for material flows on the shop floor.
